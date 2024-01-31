@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
         }
 
         /* Navbar */
@@ -96,6 +97,7 @@
         }
 
         .left-section {
+            font-size: 2rem;
             flex-basis: 100%;
             margin-bottom: 20px;
         }
@@ -106,9 +108,27 @@
         }
 
         @media only screen and (min-width: 768px) {
-            .right-section {
-                order: -1;
+            .first-section {
+                flex-wrap: nowrap;
             }
+
+            .left-section {
+                flex-basis: 50%;
+            }
+
+            .right-section {
+                flex-basis: 50%;
+            }
+        }
+
+        section div span {
+            color: #503891;
+        }
+
+        /* about */
+        .about{
+            font-size: 20px;
+            text-align: justify;
         }
     </style>
 </head>
@@ -120,8 +140,8 @@
             <span><a href="#">Rushi's Portfolio</a></span>
             <div class="menu-btn">&#9776;</div>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#first-section">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#">Skills</a></li>
                 <li><a href="#">Project</a></li>
                 <li><a href="#">Contact</a></li>
@@ -130,13 +150,27 @@
     </header>
 
     <!-- body -->
-    <section class="container first-section mt-5">
-        <div class="right-section col-md-6 order-md-2"><img src="./rushikesh.jpeg" alt=""></div>
-        <div class="left-section col-md-6">
-            Hi My name is Rushikesh <br> and I am passionate
+    <section class="container first-section mt-5" id="first-section">
+        <div class="left-section col-md-6 order-md-1">
+            Hi My name is <span>Rushikesh</span> and I am passionate
             <!-- Element to contain animated typing -->
             <span id="element"></span>
         </div>
+        <div class="right-section col-md-6 order-md-2"><img src="./rushikesh.jpeg" alt=""></div>
+    </section>
+
+    <!-- about -->
+    <section class="about container" id="about">
+        <span>About</span>
+        <p>I'm a Full Stack Web Developer and graduated in Mechanical Engineering in 2023 from Savitribai Phule Pune
+            University. I excel in HTML, CSS, JavaScript, Angular, React.js, Java, Spring Boot, and more, continuously
+            mastering emerging technologies. Drawing from my engineering background, I blend creativity and precision to
+            craft web solutions. Committed to lifelong learning, I keep pace with industry trends.
+
+            Engaging actively in the tech community, I lead workshops, collaborate with peers, and contribute to
+            collective progress. As a leader, I actively pursue opportunities to create a positive impact. Navigating my
+            career with a dedication to excellence, I embrace challenges, ensuring meaningful contributions to the
+            dynamic realm of Full Stack Web Development.</p>
     </section>
 
     <script>
