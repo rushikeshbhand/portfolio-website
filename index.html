@@ -1,29 +1,370 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    <header class="text-gray-600 body-font">
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+<!DOCTYPE html>
+<html lang="en">
 
-            <span class="ml-3 text-xl">tailwind</span>
-          </a>
-          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <a class="mr-5 hover:text-gray-900">First Link</a>
-            <a class="mr-5 hover:text-gray-900">Second Link</a>
-            <a class="mr-5 hover:text-gray-900">Third Link</a>
-            <a class="mr-5 hover:text-gray-900">Fourth Link</a>
-          </nav>
-          <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile-Rushikesh-Bhand</title>
+    <link rel="icon" type="image/x-icon" href="./icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.20.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            color: #6d7584;
+            background-color: #0B1121;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        header {
+            background-color: #0B1121;
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 36px;
+        }
+
+        nav span {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        li {
+            margin-right: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Mobile navigation button */
+        .menu-btn {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            margin-right: 10px;
+            color: #6d7584;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-btn.clicked {
+            transform: rotate(90deg);
+        }
+
+        @media only screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #0B1121;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            li {
+                margin: 10px 0;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+        }
+
+        /* body */
+        .first-section {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .left-section {
+            font-size: 2rem;
+            flex-basis: 100%;
+            margin-bottom: 20px;
+        }
+
+        .right-section img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .first-section {
+                flex-wrap: nowrap;
+            }
+
+            .left-section {
+                flex-basis: 50%;
+            }
+
+            .right-section {
+                flex-basis: 50%;
+            }
+        }
+
+        section div span {
+            color: #34AEE6;
+        }
+
+        /* about */
+        .about {
+            font-size: 20px;
+            text-align: justify;
+        }
+
+        .first-row {
+            text-align: center;
+        }
+
+        /* Custom styles for cards */
+        .project-section .card {
+            margin-bottom: 20px;
+
+        }
+
+        .card-text {
+            text-align: justify;
+        }
+
+        .row>* {
+            display: flex;
+            justify-content: center;
+        }
+
+        .download-button {
+            color: white;
+            background-color: #38BDF8;
+        }
+
+        .lets-talk-button {
+            color: white;
+        }
+
+        .heading {
+            color: #38BDF8;
+        }
+
+        span a {
+            color: #38BDF8;
+            font-size: larger;
+        }
+
+        ul li a {
+            color: #38BDF8;
+        }
+
+        .hireme-button {
+            margin-left: 20px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <span><a href="#home">Rushi's Portfolio</a></span>
+            <div class="menu-btn">&#9776;</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Project</a></li>
+                <li><a href="#contact">Contact me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- body -->
+    <section class="container first-section mt-5" id="home">
+        <div class="left-section col-md-6 order-md-1">
+            Hi My name is <span>Rushikesh</span> and I am passionate
+            <!-- Element to contain animated typing -->
+            <span id="element"></span>
         </div>
-      </header>
+        <div class="right-section col-md-6 order-md-2"><img src="./rushikesh.jpeg" alt=""></div>
+    </section>
+
+    <!-- about -->
+    <section class="about container" id="about">
+        <p class="heading">About</p>
+        <p>I'm a Full Stack Web Developer and graduated in Mechanical Engineering in 2023 from Savitribai Phule Pune
+            University. I excel in HTML, CSS, JavaScript, Angular, React.js, Java, Spring Boot, and more, continuously
+            mastering emerging technologies. Drawing from my engineering background, I blend creativity and precision to
+            craft web solutions. Committed to lifelong learning, I keep pace with industry trends.
+
+            Engaging actively in the tech community, I lead workshops, collaborate with peers, and contribute to
+            collective progress. As a leader, I actively pursue opportunities to create a positive impact. Navigating my
+            career with a dedication to excellence, I embrace challenges, ensuring meaningful contributions to the
+            dynamic realm of Full Stack Web Development.</p>
+
+
+        <div class="d-flex justify-content-center mt-5">
+            <a href="./Rushikesh_Bhand_7720917206__.pdf" download="RushikeshBhandResume.pdf" class="btn btn-info">
+                <i class="bi bi-box-arrow-down"></i> <span class="download-button">Download CV</span>
+            </a>
+            <a href="mailto:rushikesh@gmail.com" target="_blank">
+                <button class="btn btn-info hireme-button"><i class="bi bi-envelope-arrow-up"></i> Hire Me</button>
+            </a>
+        </div>
+        <!-- project section -->
+
+        <div class="row mb-5 mt-5 first-row" id="projects">
+            <p class="heading">Projects</p>
+            <div class="project-section col-lg-4 col-sm-12 col-md-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="./ecom.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ecommerce web application-</h5>
+                        <p class="card-text">This application is developed using Angular and Java REST API. In this
+                            application, you can log in through secure JWT authentication</p>
+                        <a href="https://github.com/rushikeshbhand/Angular_e-commerce_web_appliciton"
+                            class="btn btn-primary">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section col-lg-4 col-sm-12 col-md-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="./news.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">News App-</h5>
+                        <p class="card-text">This application is developed using React, Bootstrap, and the News API. You
+                            can view news in this application</p>
+                        <a href="https://github.com/rushikeshbhand/NewsApp-React" class="btn btn-primary">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section col-lg-4 col-sm-12 col-md-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="./photokhicho.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Blog website-</h5>
+                        <p class="card-text">I developed this application using WordPress. You can view blogs, and you
+                            can also download images from this website
+                            the card's content.</p>
+                        <a href="https://photokhicho.in/" class="btn btn-primary">Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+
+            <div class="project-section col-lg-4 col-sm-12 col-md-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="./textapp.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">TextApp-</h5>
+                        <p class="card-text">This app is developed using React. It allows you to count text, remove
+                            extra spaces, and convert text to uppercase or lowercase</p>
+                        <div class="text-app-button" style="text-align: center;">
+                            <a href="https://github.com/rushikeshbhand/ReactApp-TextTransform-and-WordCounter"
+                                class="btn btn-primary">Code</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section col-lg-4 col-sm-12 col-md-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="./bootstrapweb.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Bootstrap website-</h5>
+                        <p class="card-text">This is a simple Bootstrap web application that only has a UI and does not
+                            include a backend. I created this responsive web design using Bootstrap to enhance my
+                            frontend skills</p>
+                        <div style="display: flex; justify-content: space-around;">
+                            <a href="https://github.com/rushikeshbhand/Bootstrap-base-complete-Responsive-website"
+                                class="btn btn-primary">Code</a>
+                            <a href="https://rushikeshbhand.github.io/Bootstrap-base-complete-Responsive-website/"
+                                class="btn btn-primary">Demo</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container" id="contact">
+            <p class="heading">Contact me</p>
+            <form action="">
+                <div class="col mt-4 mb-3">
+                    <input type="text" class="form-control" placeholder="Enter your name">
+                </div>
+                <div class="form-group my-3">
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="9"
+                        placeholder="Enter your message"></textarea>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-info lets-talk-button mt-4">Let's Talk</button>
+                </div>
+
+            </form>
+        </div>
+        <pre>
+
+
+
+
+
+
+        </pre>
+    </section>
+
+    <!-- script -->
+    <script>
+        // Toggle mobile navigation
+        const menuBtn = document.querySelector('.menu-btn');
+        const navUl = document.querySelector('nav ul');
+
+        menuBtn.addEventListener('click', function () {
+            navUl.classList.toggle('show');
+            menuBtn.classList.toggle('clicked');
+        });
+    </script>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Full Stack Web Developer', 'Java Backend Developer', 'MERN Stack Developer'],
+            typeSpeed: 50,
+        });
+    </script>
 </body>
+
 </html>
